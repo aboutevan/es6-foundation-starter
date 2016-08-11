@@ -1,0 +1,25 @@
+{
+  "styles" : {
+    "src" : "src/main.sass",
+    "watch" : "src/**/*.{sass, scss}",
+    "dest" : "dist/assets/css"
+  },
+  "js" : {
+    "src" : "src/*.js",
+    "dest" : "dist/assets/js"
+  },
+  "views" : {
+    "src" : ["src/*.pug"
+    ],
+    "watch" : [
+      "src/*.pug",
+      "src/**/*.pug",
+      "src/**/**/*.pug"
+    ],
+    "dest" : "dist"
+  },
+  "server" : {
+    "baseDir" : "./dist"
+  }
+}
+
