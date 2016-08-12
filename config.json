@@ -1,7 +1,11 @@
 {
   "styles" : {
     "src" : "src/main.sass",
-    "watch" : "src/**/*.{sass, scss}",
+    "watch" : [
+    	"src/*.sass"
+    	"src/**/*.{sass, scss}",
+    	"src/**/**/*.{sass, scss}"
+    ],
     "dest" : "dist/assets/css"
   },
   "js" : {

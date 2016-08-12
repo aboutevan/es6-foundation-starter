@@ -1,9 +1,18 @@
 module.exports = function (gulp, plg, cfg) {
-  gulp.src(cfg.src)
+
+	function handleError (err) {
+		console.log(err.toString());
+		this.emit('end');
+	}
+
+  return function () {
+  	gulp.src(cfg.watch)
       // sass lint
       .pipe(plg.sassLint({
-        'config-file': '.sass-lint.yml'
+        configFile: '.sass-lint.yml'
       }))
       .pipe(plg.sassLint.format())
       .pipe(plg.sassLint.failOnError())
+      .on('error', handleError)
+  }
 }
