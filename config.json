@@ -2,7 +2,7 @@
   "styles" : {
     "src" : "src/main.sass",
     "watch" : [
-    	"src/*.sass"
+    	"src/*.sass",
     	"src/**/*.{sass, scss}",
     	"src/**/**/*.{sass, scss}"
     ],
