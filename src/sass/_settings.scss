@@ -40,13 +40,13 @@
 //  35. Tooltip
 //  36. Top Bar
 
-@import 'util/util';
+@import 'node_modules/foundation-sites/scss/util/util';
 
 // 1. Global
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-width: rem-calc(400);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #2199e8,
