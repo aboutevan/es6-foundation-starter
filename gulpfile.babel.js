@@ -25,36 +25,68 @@ gulp.task('bundle', function () {
 		.pipe(gulp.dest(config.js.dest + '/babelify.js'))
 })
 
-// gulp.task('foundation-js', function () {
-//   return gulp.src([
-//       // Foundation Core - needed for any of the components below
-//       config.vendor.js.foundation + 'core.js',
-//       config.vendor.js.foundation + 'util.*.js',
+gulp.task('vendor', function () {
+	browserify([
+		// Foundation Core - needed for any of the components below
+		config.foundationJS.src + 'core.js',
+		config.foundationJS.src + 'util.*.js',
 
-//       config.vendor.js.foundation + 'accordion.js',
-//       config.vendor.js.foundation + 'accordionMenu.js',
-//       config.vendor.js.foundation + 'drilldown.js',
-//       config.vendor.js.foundation + 'dropdown.js',
-//       config.vendor.js.foundation + 'dropdownMenu.js',
-//       config.vendor.js.foundation + 'equalizer.js',
-//       config.vendor.js.foundation + 'interchange.js',
-//       config.vendor.js.foundation + 'magellan.js',
-//       config.vendor.js.foundation + 'offcanvas.js',
-//       config.vendor.js.foundation + 'orbit.js',
-//       config.vendor.js.foundation + 'responsiveMenu.js',
-//       config.vendor.js.foundation + 'responsiveToggle.js',
-//       config.vendor.js.foundation + 'reveal.js',
-//       config.vendor.js.foundation + 'slider.js',
-//       config.vendor.js.foundation + 'sticky.js',
-//       config.vendor.js.foundation + 'tabs.js',
-//       config.vendor.js.foundation + 'toggler.js',
-//       config.vendor.js.foundation + 'tooltip.js'
-//     ])
-//     // .pipe(plg.sourcemaps.init())
-//     //concat here
-//     .pipe(plg.concat('main.js'))
-//     .pipe(gulp.dest(config.js.dest))
-// })
+		config.foundationJS.src + 'accordion.js',
+		config.foundationJS.src + 'accordionMenu.js',
+		// config.foundationJS.src + 'drilldown.js',
+		// config.foundationJS.src + 'dropdown.js',
+		// config.foundationJS.src + 'dropdownMenu.js',
+		// config.foundationJS.src + 'equalizer.js',
+		// config.foundationJS.src + 'interchange.js',
+		// config.foundationJS.src + 'magellan.js',
+		// config.foundationJS.src + 'offcanvas.js',
+		// config.foundationJS.src + 'orbit.js',
+		// config.foundationJS.src + 'responsiveMenu.js',
+		// config.foundationJS.src + 'responsiveToggle.js',
+		// config.foundationJS.src + 'reveal.js',
+		// config.foundationJS.src + 'slider.js',
+		// config.foundationJS.src + 'sticky.js',
+		// config.foundationJS.src + 'tabs.js',
+		// config.foundationJS.src + 'toggler.js',
+		// config.foundationJS.src + 'tooltip.js'
+	])
+	.transform(babelify)
+	.bundle()
+	.pipe(source('app.js'))
+	.pipe(plg.sourcemaps.write('./'))
+	.pipe(gulp.dest(config.js.dest + '/babelify.js'))
+  // return gulp.src([
+  //     // Foundation Core - needed for any of the components below
+  //     config.foundationJS.src + 'core.js',
+  //     config.foundationJS.src + 'util.*.js',
+
+  //     config.foundationJS.src + 'accordion.js',
+  //     config.foundationJS.src + 'accordionMenu.js',
+  //     // config.foundationJS.src + 'drilldown.js',
+  //     // config.foundationJS.src + 'dropdown.js',
+  //     // config.foundationJS.src + 'dropdownMenu.js',
+  //     // config.foundationJS.src + 'equalizer.js',
+  //     // config.foundationJS.src + 'interchange.js',
+  //     // config.foundationJS.src + 'magellan.js',
+  //     // config.foundationJS.src + 'offcanvas.js',
+  //     // config.foundationJS.src + 'orbit.js',
+  //     // config.foundationJS.src + 'responsiveMenu.js',
+  //     // config.foundationJS.src + 'responsiveToggle.js',
+  //     // config.foundationJS.src + 'reveal.js',
+  //     // config.foundationJS.src + 'slider.js',
+  //     // config.foundationJS.src + 'sticky.js',
+  //     // config.foundationJS.src + 'tabs.js',
+  //     // config.foundationJS.src + 'toggler.js',
+  //     // config.foundationJS.src + 'tooltip.js'
+  //   ])
+  //   // .pipe(plg.sourcemaps.init())
+  //   //concat here
+  //   .pipe(plg.concat('concat.js'))
+  //   // .pipe(gulp.dest(config.foundationJS.dest))
+  //   // .pipe(plg.uglify().on('error', plg.util.log))
+  //   // .pipe(plg.sourcemaps.write('./'))
+  //   .pipe(gulp.dest(config.foundationJS.dest))
+})
 
 
 // function getTask(task, cfg) {
@@ -81,7 +113,7 @@ instead of modularizing*/
 gulp.task('pug-rebuild', ['views'], getTask('pug-rebuild'))
 
 // Scripts
-gulp.task('scripts', ['lint'], getTask('scripts', config.js))
+gulp.task('scripts', getTask('scripts', config.js))
 gulp.task('lint', getTask('lint', config.js))
 
 //Styles
