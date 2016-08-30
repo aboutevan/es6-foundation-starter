@@ -25,6 +25,37 @@ gulp.task('bundle', function () {
 		.pipe(gulp.dest(config.js.dest + '/babelify.js'))
 })
 
+// gulp.task('foundation-js', function () {
+//   return gulp.src([
+//       // Foundation Core - needed for any of the components below
+//       config.vendor.js.foundation + 'core.js',
+//       config.vendor.js.foundation + 'util.*.js',
+
+//       config.vendor.js.foundation + 'accordion.js',
+//       config.vendor.js.foundation + 'accordionMenu.js',
+//       config.vendor.js.foundation + 'drilldown.js',
+//       config.vendor.js.foundation + 'dropdown.js',
+//       config.vendor.js.foundation + 'dropdownMenu.js',
+//       config.vendor.js.foundation + 'equalizer.js',
+//       config.vendor.js.foundation + 'interchange.js',
+//       config.vendor.js.foundation + 'magellan.js',
+//       config.vendor.js.foundation + 'offcanvas.js',
+//       config.vendor.js.foundation + 'orbit.js',
+//       config.vendor.js.foundation + 'responsiveMenu.js',
+//       config.vendor.js.foundation + 'responsiveToggle.js',
+//       config.vendor.js.foundation + 'reveal.js',
+//       config.vendor.js.foundation + 'slider.js',
+//       config.vendor.js.foundation + 'sticky.js',
+//       config.vendor.js.foundation + 'tabs.js',
+//       config.vendor.js.foundation + 'toggler.js',
+//       config.vendor.js.foundation + 'tooltip.js'
+//     ])
+//     // .pipe(plg.sourcemaps.init())
+//     //concat here
+//     .pipe(plg.concat('main.js'))
+//     .pipe(gulp.dest(config.js.dest))
+// })
+
 
 // function getTask(task, cfg) {
 //   if(!cfg) {

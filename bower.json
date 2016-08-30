@@ -1,0 +1,28 @@
+{
+  "name": "es-starter",
+  "description": "A modest project starter using Gulp, Pug, and Sass, with an emphasis on component based development, BEM, and JS linting — Edit",
+  "main": "dist/assets/js/app.js",
+  "authors": [
+    "Evan Salzbrenner"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "pug",
+    "gulp",
+    "sass",
+    "BEM",
+    "components",
+    "postcss"
+  ],
+  "homepage": "https://github.com/aboutevan/es-starter",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "^5.5.3"
+  }
+}

@@ -13,7 +13,7 @@ module.exports = function (gulp, plg, cfg) {
     gulp.src(cfg.src)
       .pipe(plg.sourcemaps.init())
       .pipe(plg.sass({
-        outputStyle: 'compressed',
+        outputStyle: 'expanded',
         includePaths: require('node-normalize-scss').includePaths
       }))
       .pipe(plg.postcss(processors))
