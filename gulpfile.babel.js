@@ -1,11 +1,29 @@
 'use strict'
 
 var gulp = require('gulp')
+var babelify = require('babelify');
+var browserify = require('browserify');
 var pug = require('gulp-pug')
 var plg = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'browser-sync', 'autoprefixer']
 })
 var config = require('./config.json')
+var source = require('vinyl-source-stream');
+
+gulp.task('bundle', function () {
+	var bundler = browserify({
+		entries: config.js.dest + '/main.js',
+		debug: true
+	});
+
+	bundler.transform(babelify);
+
+	bundler.bundle()
+		.on('error', function (err) { console.error(err); })
+		.pipe(source('app.js'))
+		.pipe(plg.sourcemaps.write('./'))
+		.pipe(gulp.dest(config.js.dest + '/babelify.js'))
+})
 
 
 // function getTask(task, cfg) {
