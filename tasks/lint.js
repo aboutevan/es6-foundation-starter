@@ -6,7 +6,7 @@ module.exports = function (gulp, plg, cfg) {
 	}
 
   return function () {
-    gulp.src(cfg.src)
+    gulp.src(cfg.watch)
       .pipe(plg.xo())
       .on('error', handleError)
   }

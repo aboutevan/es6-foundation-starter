@@ -1,14 +1,24 @@
 'use strict'
 
 var gulp = require('gulp')
+var argv = require('yargs').argv;
 var babelify = require('babelify');
 var browserify = require('browserify');
 var pug = require('gulp-pug')
 var plg = require('gulp-load-plugins')({
-  pattern: ['gulp-*', 'browser-sync', 'autoprefixer']
+  pattern: [
+  	'gulp-*',
+  	'browser-sync',
+  	'autoprefixer',
+  	'babelify',
+  	'browserify',
+  	'yargs',
+  	'vinyl-buffer',
+  	'vinyl-source-stream']
 })
 var config = require('./config.json')
 var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 
 gulp.task('bundle', function () {
 	var bundler = browserify({
@@ -25,77 +35,9 @@ gulp.task('bundle', function () {
 		.pipe(gulp.dest(config.js.dest + '/babelify.js'))
 })
 
-gulp.task('vendor', function () {
-	browserify([
-		// Foundation Core - needed for any of the components below
-		config.foundationJS.src + 'core.js',
-		config.foundationJS.src + 'util.*.js',
-
-		config.foundationJS.src + 'accordion.js',
-		config.foundationJS.src + 'accordionMenu.js',
-		// config.foundationJS.src + 'drilldown.js',
-		// config.foundationJS.src + 'dropdown.js',
-		// config.foundationJS.src + 'dropdownMenu.js',
-		// config.foundationJS.src + 'equalizer.js',
-		// config.foundationJS.src + 'interchange.js',
-		// config.foundationJS.src + 'magellan.js',
-		// config.foundationJS.src + 'offcanvas.js',
-		// config.foundationJS.src + 'orbit.js',
-		// config.foundationJS.src + 'responsiveMenu.js',
-		// config.foundationJS.src + 'responsiveToggle.js',
-		// config.foundationJS.src + 'reveal.js',
-		// config.foundationJS.src + 'slider.js',
-		// config.foundationJS.src + 'sticky.js',
-		// config.foundationJS.src + 'tabs.js',
-		// config.foundationJS.src + 'toggler.js',
-		// config.foundationJS.src + 'tooltip.js'
-	])
-	.transform(babelify)
-	.bundle()
-	.pipe(source('app.js'))
-	.pipe(plg.sourcemaps.write('./'))
-	.pipe(gulp.dest(config.js.dest + '/babelify.js'))
-  // return gulp.src([
-  //     // Foundation Core - needed for any of the components below
-  //     config.foundationJS.src + 'core.js',
-  //     config.foundationJS.src + 'util.*.js',
-
-  //     config.foundationJS.src + 'accordion.js',
-  //     config.foundationJS.src + 'accordionMenu.js',
-  //     // config.foundationJS.src + 'drilldown.js',
-  //     // config.foundationJS.src + 'dropdown.js',
-  //     // config.foundationJS.src + 'dropdownMenu.js',
-  //     // config.foundationJS.src + 'equalizer.js',
-  //     // config.foundationJS.src + 'interchange.js',
-  //     // config.foundationJS.src + 'magellan.js',
-  //     // config.foundationJS.src + 'offcanvas.js',
-  //     // config.foundationJS.src + 'orbit.js',
-  //     // config.foundationJS.src + 'responsiveMenu.js',
-  //     // config.foundationJS.src + 'responsiveToggle.js',
-  //     // config.foundationJS.src + 'reveal.js',
-  //     // config.foundationJS.src + 'slider.js',
-  //     // config.foundationJS.src + 'sticky.js',
-  //     // config.foundationJS.src + 'tabs.js',
-  //     // config.foundationJS.src + 'toggler.js',
-  //     // config.foundationJS.src + 'tooltip.js'
-  //   ])
-  //   // .pipe(plg.sourcemaps.init())
-  //   //concat here
-  //   .pipe(plg.concat('concat.js'))
-  //   // .pipe(gulp.dest(config.foundationJS.dest))
-  //   // .pipe(plg.uglify().on('error', plg.util.log))
-  //   // .pipe(plg.sourcemaps.write('./'))
-  //   .pipe(gulp.dest(config.foundationJS.dest))
+gulp.task('scripts2', ['lint'], () => {
+	
 })
-
-
-// function getTask(task, cfg) {
-//   if(!cfg) {
-//     return require('./tasks/' + task)(gulp, plg)
-//   } else {
-//     return require('./tasks/' + task)(gulp, plg, cfg)
-//   }
-// }
 
 function getTask(task, cfg) {
   return require('./tasks/' + task)(gulp, plg, cfg)
@@ -113,7 +55,7 @@ instead of modularizing*/
 gulp.task('pug-rebuild', ['views'], getTask('pug-rebuild'))
 
 // Scripts
-gulp.task('scripts', getTask('scripts', config.js))
+gulp.task('scripts', ['lint'], getTask('scripts', config.js))
 gulp.task('lint', getTask('lint', config.js))
 
 //Styles

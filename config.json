@@ -1,24 +1,32 @@
 {
   "styles" : {
-    "src" : "src/main.sass",
+    "src" : "dev/main.sass",
     "watch" : [
-    	"src/*.sass",
-    	"src/**/*.{sass, scss}",
-    	"src/**/**/*.{sass, scss}"
+    	"dev/*.sass",
+    	"dev/**/*.{sass, scss}",
+    	"dev/**/**/*.{sass, scss}"
     ],
     "dest" : "dist/assets/css"
   },
   "js" : {
-    "src" : ["src/**/*.js", "src/*.js"],
+    "src" : "dev/main.js",
+    "watch" : [
+    	"dev/*.js",
+    	"dev/**/*.js",
+    	"dev/**/**/*.js",
+    	"!dev/js/vendor",
+    	"gulpfile.babel.js",
+    	"tasks/*.js"
+    ],
     "dest" : "dist/assets/js"
   },
   "views" : {
-    "src" : ["src/*.pug"
+    "src" : ["dev/*.pug"
     ],
     "watch" : [
-      "src/*.pug",
-      "src/**/*.pug",
-      "src/**/**/*.pug"
+      "dev/*.pug",
+      "dev/**/*.pug",
+      "dev/**/**/*.pug"
     ],
     "dest" : "dist"
   },
