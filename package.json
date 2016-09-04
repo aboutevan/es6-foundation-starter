@@ -1,9 +1,9 @@
 {
-  "name": "pug-modest",
+  "name": "es6-foundation-starter",
   "version": "0.0.1",
-  "description": "A modest project starter using Gulp, Pug, and Sass, with an emphasis on component based development, BEM, and JS linting — Edit",
+  "description": "An ES6 starter with Foundation 6 integration, using Pug, Sass and Gulp, with an emphasis on component based development, BEM and writing JS with XO",
   "author": "Evan Salzbrenner",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "gulp"
   },
