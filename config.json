@@ -1,0 +1,45 @@
+{
+  "styles" : {
+    "src" : "dev/main.sass",
+    "watch" : [
+    	"dev/*.sass",
+    	"dev/**/*.{sass,scss}",
+    	"dev/**/**/*.{sass,scss}"
+    ],
+    "dest" : "dist/assets/css"
+  },
+  "js" : {
+    "src" : "dev/main.js",
+    "watch" : [
+    	"dev/*.js",
+    	"dev/**/*.js",
+    	"dev/**/**/*.js",
+    	"!dev/js/vendor",
+    	"gulpfile.babel.js",
+    	"tasks/*.js"
+    ],
+    "dest" : "dist/assets/js"
+  },
+  "images" : {
+  	"src" : "dev/assets/img/*.{jpeg,png}",
+  	"dest" : "dist/assets/images"
+  },
+  "svg" : {
+  	"src" : "dev/assets/svg/*.svg",
+  	"dest" : "dist/assets/svg"
+  },
+  "views" : {
+    "src" : ["dev/*.pug"
+    ],
+    "watch" : [
+      "dev/*.pug",
+      "dev/**/*.pug",
+      "dev/**/**/*.pug"
+    ],
+    "dest" : "dist"
+  },
+  "server" : {
+    "baseDir" : "./dist"
+  }
+}
+

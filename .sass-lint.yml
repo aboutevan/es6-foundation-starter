@@ -1,0 +1,150 @@
+options:
+  formatter: stylish
+  merge-default-rules: false
+
+rules:
+  # bem rules
+  bem-depth: 1
+  # brace style
+  brace-style:
+    - 1
+    - style: 2tbs
+    - allow-single-line: false
+
+  # comments
+  no-css-comments:
+    - 1
+
+  # declaration rules
+  border-zero:
+    - 1
+    - convention: none
+
+  no-duplicate-properties:
+    - 1
+
+  no-mergeable-selectors:
+    - 1
+  # no-vendor-prefixes:
+  #   - 1
+  one-declaration-per-line: 
+    - 1
+  shorthand-values: 
+    - 1
+  space-before-colon:
+    - 1
+  space-after-colon: 
+    - 1
+  space-after-comma: 
+    - 1
+  space-around-operator: 
+    - 1
+  space-before-bang: 
+    - 1
+  space-after-bang:
+    - 1
+  space-between-parens:
+    - 1
+  url-quotes:
+    - 1
+  no-empty-rulesets:
+    - 1
+
+  # empty args
+  empty-args: 
+    - include: false
+
+  # extends rules
+  extends-before-declarations: 1
+  extends-before-mixins: 1
+  id-name-format:
+    - 1
+    - convention: hyphenatedlowercase
+
+  # function name format
+  function-name-format: 1
+
+  # hex colors
+  hex-notation:
+    - 1
+    -
+      style: lowercase
+
+  # empty-line-between-blocks:
+  #   - 1
+  #   - ignore-single-line-rulesets: true
+
+  # leading zero / trailing zero
+  no-trailing-zero: 1
+
+  # mixin name format
+  mixin-name-format: 1
+
+  # mixins
+  mixins-before-declarations:
+    - 1
+    -
+      exclude:
+        - breakpoint
+        - grid-row
+        - grid-col
+
+  # nesting rules
+  force-element-nesting: 1
+  force-pseudo-nesting: 1
+  nesting-depth: 
+    - 1
+    - 
+      max-depth: 4
+
+  # sort order
+  property-sort-order:
+    - 1
+    -
+      order: concentric
+      ignore-custom-properties: true
+
+  # class rules
+  class-name-format:
+    - 1
+    - convention: hyphenatedbem
+
+  # placeholders %
+  placeholder-name-format:
+    - 1
+    - convention: hyphenatedlowercase
+      allow-leading-underscore: false
+
+  placeholder-in-extend: 1
+
+  # special characters
+  no-warn: 1
+  no-debug: 1
+  no-ids: 1
+  # no-important: 1
+  no-qualifying-elements:
+    - 1
+    - allow-element-with-attribute: true
+
+  # strings
+  quotes:
+    - 1
+    - style: single
+
+  # variable rules
+  variable-name-format:
+    - 1
+    - convention: hyphenatedlowercase
+      allow-leading-underscore: false
+
+  # variable-for-property:
+  #   - 1
+  #   -
+  #     properties:
+  #       - color
+  #       # - background-color
+  #       - border-color
+  #       # - background
+  # zero
+  zero-unit:
+    - 1

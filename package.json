@@ -1,0 +1,72 @@
+{
+  "name": "pug-modest",
+  "version": "0.0.1",
+  "description": "A modest project starter using Gulp, Pug, and Sass, with an emphasis on component based development, BEM, and JS linting — Edit",
+  "author": "Evan Salzbrenner",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aboutevan/pug-modest"
+  },
+  "keywords": [
+    "pug",
+    "gulp",
+    "sass",
+    "BEM",
+    "components",
+    "postcss"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "babel": "^6.5.2",
+    "babel-preset-es2015": "^6.14.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.14.0",
+    "browserify": "^13.1.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-data": "^1.2.1",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-notify": "^2.2.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-pug": "^3.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sass-lint": "^1.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-svg-sprite": "^1.3.6",
+    "gulp-svgmin": "^1.2.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "gulp-xo": "^0.12.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "yargs": "^5.0.0"
+  },
+  "xo": {
+    "esnext": true,
+    "globals": [
+      "window",
+      "document"
+    ],
+    "rules": {
+      "space-before-function-paren": [
+        2,
+        {
+          "anonymous": "always",
+          "named": "always"
+        }
+      ]
+    }
+  },
+  "license": "MIT",
+  "dependencies": {
+    "foundation-sites": "^6.2.3",
+    "jquery": "~2.2.0"
+  }
+}
