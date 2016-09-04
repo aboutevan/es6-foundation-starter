@@ -1,19 +1,21 @@
 module.exports = function (gulp, plg, cfg) {
-	
-  return function () {gulp.src(cfg.src)
-  		var argv = plg.yargs.argv;
+	return function () {
+		const argv = plg.yargs.argv;
+		const options = {
+			entries: cfg.src,
+			debug: argv.production === false
+		};
 
-      var options = {
-      	entries: cfg.src,
-      	debug: argv.production ? false : true
-      }
-
-      return plg.browserify(options)
-      	.transform(plg.babelify)
-      	.bundle()
-      	.pipe(plg.vinylSourceStream('main.js'))
-      	.pipe(plg.if(argv.production, plg.vinylBuffer()))
-      	.pipe(plg.if(argv.production, plg.uglify().on('error', plg.util.log)))
-      	.pipe(gulp.dest(cfg.dest))
-  }
-}
+		return plg.browserify(options)
+			.transform(plg.babelify)
+			.bundle()
+			.pipe(plg.vinylSourceStream('main.js'))
+			.pipe(plg.if(argv.production, plg.vinylBuffer()))
+			// .pipe(plg.if(argv.production, plg.sourcemaps.init({
+			// 	loadMaps: true
+			// })))
+			.pipe(plg.if(argv.production, plg.uglify().on('error', plg.util.log)))
+			// .pipe(plg.if(argv.production, plg.sourcemaps.write('./')))
+			.pipe(gulp.dest(cfg.dest));
+	};
+};
