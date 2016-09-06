@@ -31,6 +31,6 @@ import 'foundation-sites/dist/plugins/foundation.util.triggers.js';
 // import 'foundation-sites/dist/plugins/foundation.sticky.js';
 // import 'foundation-sites/dist/plugins/foundation.tabs.js';
 // import 'foundation-sites/dist/plugins/foundation.toggler.js';
-import 'foundation-sites/dist/plugins/foundation.tooltip.js';
+// import 'foundation-sites/dist/plugins/foundation.tooltip.js';
 // init to make available for app
 $(document).foundation();
