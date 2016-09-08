@@ -9,7 +9,7 @@
     "dest" : "dist/assets/css"
   },
   "js" : {
-    "src" : "dev/main.js",
+    "src" : "dev/app.init.js",
     "watch" : [
     	"dev/*.js",
     	"dev/**/*.js",
