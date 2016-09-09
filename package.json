@@ -33,6 +33,7 @@
     "gulp-if": "^2.0.1",
     "gulp-imagemin": "^3.0.3",
     "gulp-load-plugins": "^1.2.4",
+    "gulp-nodemon": "^2.1.0",
     "gulp-notify": "^2.2.0",
     "gulp-postcss": "^6.1.1",
     "gulp-pug": "^3.0.4",
@@ -67,7 +68,10 @@
   },
   "license": "MIT",
   "dependencies": {
+    "express": "^4.14.0",
     "foundation-sites": "^6.2.3",
-    "jquery": "~2.2.0"
+    "jquery": "~2.2.0",
+    "mongoose": "^4.6.0",
+    "passport": "^0.3.2"
   }
 }
