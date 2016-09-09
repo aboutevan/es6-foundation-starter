@@ -2,11 +2,11 @@ import angular from 'angular';
 import AppComponent from './app.component';
 import common from './common/common';
 
-const myApp = angular
+const app = angular
 	.module('app', [
 		common
 	])
 	.component('app', AppComponent)
 	.name;
 
-export default myApp;
+export default app;

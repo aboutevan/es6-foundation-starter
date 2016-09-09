@@ -46,9 +46,9 @@ var _common2 = _interopRequireDefault(_common);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var myApp = _angular2.default.module('app', [_common2.default]).component('app', _app2.default).name;
+var app = _angular2.default.module('app', [_common2.default]).component('app', _app2.default).name;
 
-exports.default = myApp;
+exports.default = app;
 
 },{"./app.component":1,"./common/common":4,"angular":9}],4:[function(require,module,exports){
 'use strict';
@@ -109,7 +109,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var NavComponent = {
 	NavController: _navController2.default,
-	template: '<h1>nav</nav>'
+	template: '<h1>nav</h1>'
 };
 
 exports.default = NavComponent;

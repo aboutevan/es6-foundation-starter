@@ -3,7 +3,7 @@ import NavController from './nav.controller.js';
 
 const NavComponent = {
 	NavController,
-	template: '<h1>nav</nav>'
+	template: '<h1>nav</h1>'
 };
 
 export default NavComponent;
