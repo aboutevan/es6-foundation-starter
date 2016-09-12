@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+	head
+		title= meta.title
+		meta(name="description" content= meta.description)
+
+		meta(charset="utf-8")
+		meta(name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,shrink-to-fit=no")
+		link(href="assets/css/main.css", rel="stylesheet")
+
+	body
+		.content-main
+			block content
+
+		h1 forever
+
+		-var env = 'development'
+
+		if env !== 'production'
+			script(src='/jspm-packages/system.js')
+			script(src='/config.js')
+			script(src='/assets/js/main.js')
+
+			script.
+				SystemJS.import('/dev/client/main.js')
+
+		else
+			script(src='/assets/js/main.js')
+		//- .svg(style='display: none; background: red;')
+		//- 	include ../../dist/assets/svg/all.svg

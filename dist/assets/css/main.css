@@ -1132,8 +1132,6 @@ select[multiple] {
   display: block;
 }
 
-.greeting h1 {
-  color: red;
-}
+@imoprt './app/app.component' {}
 
 /*# sourceMappingURL=main.css.map */

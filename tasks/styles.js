@@ -14,7 +14,9 @@ module.exports = function (gulp, plg, cfg) {
 		gulp.src(cfg.src)
 			.pipe(plg.sourcemaps.init())
 			.pipe(plg.sass({
-				outputStyle: 'expanded'
+				outputStyle: 'expanded',
+				functions: plg.sassJspmImporter.resolve_function('/'),
+				importer: plg.sassJspmImporter.importer
 			}))
 			.pipe(plg.postcss(processors))
 			.pipe(plg.sourcemaps.write('./'))

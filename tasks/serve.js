@@ -2,9 +2,17 @@ module.exports = function (gulp, plg, cfg) {
 	const bs = plg.browserSync.create('server');
 	return function () {
 		bs.init({
-			server: cfg.server.baseDir,
+			server: {
+				baseDir: cfg.server.baseDir,
+				routes: {
+					'/jspm-packages': 'jspm_packages',
+					'/config.js': 'config.js',
+					'/dev' : 'dev'
+				}
+			},
 			notify: false,
-			reloadDelay: 1000
+			reloadDelay: 500,
+			open: false
 		});
 	};
 };
