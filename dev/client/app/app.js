@@ -1,5 +1,4 @@
 import angular from 'angular'
-// import AppComponent from './app.component'
 import Common from './common/components/index'
 
 const app = angular
